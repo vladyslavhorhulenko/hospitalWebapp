@@ -25,8 +25,10 @@ public class MyServlet extends HttpServlet {
             e.printStackTrace();
         }
         List<Doctor> doctors = manager.getAllDoctors();
-        try(PrintWriter writer = response.getWriter()) {
-            doctors.stream().sorted(Comparator.comparing(Person::getFullName)).forEach(writer::println);
-        }
+        //try(PrintWriter writer = response.getWriter()) {
+        //    doctors.stream().sorted(Comparator.comparing(Person::getFullName)).forEach(writer::println);
+        //}
+        request.setAttribute("doctors", doctors);
+        request.getRequestDispatcher("page.jsp").forward(request, response);
     }
 }
