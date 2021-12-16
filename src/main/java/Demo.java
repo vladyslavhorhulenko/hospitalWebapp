@@ -22,8 +22,7 @@ public class Demo {
         //List<Doctor> doctors = manager.getAllDoctors();
         //doctors.stream().sorted(Comparator.comparing(Doctor::getPatientCount).reversed()).forEach(System.out::println);
         //manager.addPrescription(new Prescription(patients.get(0), doctors.get(0), 1, "lol"));
-        List<Prescription> prescriptions = manager.getPatientPrescriprions(patients.get(0));
-        List<Nurse> nurses = manager.getAllNurses();
-        System.out.println(manager.executePrescription(prescriptions.get(1), nurses.get(0)));
+        doctors.forEach(System.out::println);
+
     }
 }

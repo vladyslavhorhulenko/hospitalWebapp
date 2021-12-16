@@ -5,10 +5,7 @@ import db.entity.*;
 import javax.print.Doc;
 import javax.swing.*;
 import javax.xml.transform.Result;
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -24,7 +21,7 @@ public class DBManager {
 
     private DBManager() {
         try {
-            InputStream in = new BufferedInputStream(new FileInputStream("app.properties"));
+            InputStream in = new BufferedInputStream(new FileInputStream(new File("D:\\JavaProjects\\webapp\\app.properties")));
             Properties prop = new Properties();
             prop.load(in);
             url = prop.getProperty("connection.url");
